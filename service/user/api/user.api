@@ -44,5 +44,5 @@ service User {
 )
 service User {
 	@handler UserInfo
-	post /api/user/userinfo() returns (UserInfoResponse)
+	get /api/user/userinfo() returns (UserInfoResponse)
 }
