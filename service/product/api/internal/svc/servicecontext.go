@@ -2,14 +2,19 @@ package svc
 
 import (
 	"mall/service/product/api/internal/config"
+	"mall/service/product/rpc/productclient"
+
+	"github.com/tal-tech/go-zero/zrpc"
 )
 
 type ServiceContext struct {
-	Config config.Config
+	Config     config.Config
+	ProductRpc productclient.Product
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
 	return &ServiceContext{
-		Config: c,
+		Config:     c,
+		ProductRpc: productclient.NewProduct(zrpc.MustNewClient(c.ProductRpc)),
 	}
 }
