@@ -54,5 +54,5 @@ service Product {
 	post /api/product/remove(RemoveRequest) returns(RemoveResponse)
 	
 	@handler Detail
-	get /api/product/detail(DetailRequest) returns(DetailResponse)
+	post /api/product/detail(DetailRequest) returns(DetailResponse)
 }
